@@ -151,8 +151,8 @@ $(window).resize(function() {
   height = $('body').height();
   var canvas = document.getElementById("canvas");
   var ctx = canvas.getContext('2d');
-  canvas.setAttribute("width", width);
-  canvas.setAttribute("height", height);
+  canvas.width = width;
+  canvas.height = height;
   cx = width/2;
   cy = height/2;
   if(height / width < 0.75) {
@@ -162,13 +162,6 @@ $(window).resize(function() {
     ctx.font =  width/12+"px 'ＭＳ ゴシック'";
     sc = width/640;
   }
-
-  var touchWidth = 640*sc;
-  var touchHeight = 480*sc;
-  $(".touch_area").width(touchWidth);
-  $(".touch_area").height(touchHeight);
-  $(".touch_area").css("top", cy - touchHeight/2);
-  $(".touch_area").css("left", cx - touchWidth/2);
 
   draw();
 })
